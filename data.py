@@ -24,7 +24,8 @@ if __name__ == '__main__':
     ep_0, ep_1, ep_2, length = loadData('data.txt')
     x = list(range(1, length+1))
 
-    
+#? af
+#knlknk
 plt.xlabel('X')
 plt.ylabel('Y')
 plt.title('trace')
