@@ -1,0 +1,173 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "asio",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "asio"
+				},
+				{
+					"build" : "apps",
+					"childIndexes" : 
+					[
+						3
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "apps",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "apps/scout_monitor",
+					"childIndexes" : 
+					[
+						4
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "apps/scout_monitor",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "apps/scout_monitor/app",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "apps/scout_monitor/app",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						2,
+						3,
+						4
+					],
+					"name" : "wrp_sdk",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "asio",
+					"parentIndex" : 0
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "app_bunker_demo::@9e189ee61a034fc9b705",
+					"jsonFile" : "target-app_bunker_demo-Debug-bf8a91dbc68ec1c1b64b.json",
+					"name" : "app_bunker_demo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "app_hunter_demo::@9e189ee61a034fc9b705",
+					"jsonFile" : "target-app_hunter_demo-Debug-777443467b6b384fe00e.json",
+					"name" : "app_hunter_demo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "app_scout_monitor::@12874792105a77b54bdd",
+					"jsonFile" : "target-app_scout_monitor-Debug-d618b84e79f4c122928d.json",
+					"name" : "app_scout_monitor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "monitor::@771da87744869352074e",
+					"jsonFile" : "target-monitor-Debug-6fc9142369468899e683.json",
+					"name" : "monitor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wrp_sdk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wrp_sdk-Debug-0c1e52119690dc93c1b7.json",
+					"name" : "wrp_sdk",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wxc/Documents/agx_sdk/build",
+		"source" : "/home/wxc/Documents/agx_sdk"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

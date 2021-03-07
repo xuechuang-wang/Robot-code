@@ -1,0 +1,102 @@
+[
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/wrp_sdk.dir/src/asyncio/async_serial.cpp.o -c /home/wxc/Documents/agx_sdk/src/asyncio/async_serial.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/src/asyncio/async_serial.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/wrp_sdk.dir/src/asyncio/async_can.cpp.o -c /home/wxc/Documents/agx_sdk/src/asyncio/async_can.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/src/asyncio/async_can.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/wrp_sdk.dir/src/platforms/mobile_base.cpp.o -c /home/wxc/Documents/agx_sdk/src/platforms/mobile_base.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/mobile_base.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/wrp_sdk.dir/src/platforms/hunter_base.cpp.o -c /home/wxc/Documents/agx_sdk/src/platforms/hunter_base.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/hunter_base.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/gcc-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -o CMakeFiles/wrp_sdk.dir/src/platforms/hunter_can_parser.c.o -c /home/wxc/Documents/agx_sdk/src/platforms/hunter_can_parser.c",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/hunter_can_parser.c"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/wrp_sdk.dir/src/platforms/scout_base.cpp.o -c /home/wxc/Documents/agx_sdk/src/platforms/scout_base.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/scout_base.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/gcc-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -o CMakeFiles/wrp_sdk.dir/src/platforms/scout_can_parser.c.o -c /home/wxc/Documents/agx_sdk/src/platforms/scout_can_parser.c",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/scout_can_parser.c"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/gcc-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -o CMakeFiles/wrp_sdk.dir/src/platforms/scout_uart_parser.c.o -c /home/wxc/Documents/agx_sdk/src/platforms/scout_uart_parser.c",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/scout_uart_parser.c"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/wrp_sdk.dir/src/platforms/tracer_base.cpp.o -c /home/wxc/Documents/agx_sdk/src/platforms/tracer_base.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/tracer_base.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/gcc-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -o CMakeFiles/wrp_sdk.dir/src/platforms/tracer_can_parser.c.o -c /home/wxc/Documents/agx_sdk/src/platforms/tracer_can_parser.c",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/tracer_can_parser.c"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/gcc-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -o CMakeFiles/wrp_sdk.dir/src/platforms/tracer_uart_parser.c.o -c /home/wxc/Documents/agx_sdk/src/platforms/tracer_uart_parser.c",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/tracer_uart_parser.c"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/wrp_sdk.dir/src/platforms/bunker_base.cpp.o -c /home/wxc/Documents/agx_sdk/src/platforms/bunker_base.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/bunker_base.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/gcc-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -o CMakeFiles/wrp_sdk.dir/src/platforms/bunker_can_parser.c.o -c /home/wxc/Documents/agx_sdk/src/platforms/bunker_can_parser.c",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/bunker_can_parser.c"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build",
+  "command": "/bin/gcc-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/src -I/home/wxc/Documents/agx_sdk/asio/include -g -o CMakeFiles/wrp_sdk.dir/src/platforms/bunker_uart_parser.c.o -c /home/wxc/Documents/agx_sdk/src/platforms/bunker_uart_parser.c",
+  "file": "/home/wxc/Documents/agx_sdk/src/platforms/bunker_uart_parser.c"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_hunter_demo.dir/hunter_demo/hunter_demo.cpp.o -c /home/wxc/Documents/agx_sdk/apps/hunter_demo/hunter_demo.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/hunter_demo/hunter_demo.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_bunker_demo.dir/bunker_demo/bunker_demo.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_demo.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_demo.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps/scout_monitor",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/apps/scout_monitor/include -I/home/wxc/Documents/agx_sdk/apps/scout_monitor/src -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/monitor.dir/src/nshapes.cpp.o -c /home/wxc/Documents/agx_sdk/apps/scout_monitor/src/nshapes.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/scout_monitor/src/nshapes.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps/scout_monitor",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/apps/scout_monitor/include -I/home/wxc/Documents/agx_sdk/apps/scout_monitor/src -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/monitor.dir/src/ncolors.cpp.o -c /home/wxc/Documents/agx_sdk/apps/scout_monitor/src/ncolors.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/scout_monitor/src/ncolors.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps/scout_monitor",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/apps/scout_monitor/include -I/home/wxc/Documents/agx_sdk/apps/scout_monitor/src -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/monitor.dir/src/scout_monitor.cpp.o -c /home/wxc/Documents/agx_sdk/apps/scout_monitor/src/scout_monitor.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/scout_monitor/src/scout_monitor.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps/scout_monitor/app",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/apps/scout_monitor/include -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_scout_monitor.dir/app_scout_monitor.cpp.o -c /home/wxc/Documents/agx_sdk/apps/scout_monitor/app/app_scout_monitor.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/scout_monitor/app/app_scout_monitor.cpp"
+}
+]
