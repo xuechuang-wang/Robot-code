@@ -4,7 +4,7 @@
 #include <cmath>
 #include <fstream>
 
-//!  PI 控制
+//!  线性自抗扰控制 + ESO
 
 int main(int argc, char **argv)
 {
@@ -59,15 +59,29 @@ int main(int argc, char **argv)
 
     double vc = 0;
     double wc = 0;
-    double kx1 = 5;      //? 控制器增益
-    double ky1 = 5;      //? 控制器增益
-    double kx2 = 0.5;      //? 控制器增益
-    double ky2 = 0.5;      //? 控制器增益
-        
-    double s1 = 0;
-    double s2 = 0;
+    double kx = 5;      //? 控制器增益
+    double ky = 5;      //? 控制器增益
+
     double u1 = 0;
     double u2 = 0;       
+
+    //! 定义观测器变量
+    double x1 = 0;
+    double x2 = 0;
+    double x1guji = 0;
+    double x2guji = 0;
+    double dot_x1guji = 0;
+    double dot_X2guji = 0;
+    double xd1guji = 0;
+    double xd2guji = 0;
+    double dot_xd1guji = 0;
+    double dot_xd2guji = 0;
+
+    //! 定义观测器参数
+    double beita0 = 1;   //? p^2
+    double beita1 = 2;   //? 2p
+    double gama0 = 1;  //? p^2
+    double gama1 = 2;    //? 2p
 
     while (true)
     {
@@ -91,8 +105,6 @@ int main(int argc, char **argv)
         y += dotY * Ts;
 
         //! 轨迹规划模块 公式 8
-
-
         dotThetaR = wR;
         thetaR += dotThetaR * Ts;
         dotXR = vR * cos(thetaR) - wR * d * sin(thetaR);
@@ -103,23 +115,30 @@ int main(int argc, char **argv)
 
         //! 误差计算模块 公式 13
     
-        
-
         double xE = x - xR;
         double yE = y - yR;
        
+        //!  ESO
+        x1 = xE;
+        x2 = yE;
+        dot_x1guji = u1 - dotXR + xd1guji - beita1 * (x1guji - x1);
+        dot_xd1guji = (-beita0) * (x1guji - x1);
+        dot_X2guji = u2 -dotYR + xd2guji - gama1 * (x2guji - x2);
+        dot_xd2guji = (-gama0) * (x2guji - x2);
+        x1guji += dot_x1guji * Ts;
+        x2guji += dot_X2guji * Ts;
+        xd1guji += dot_xd1guji * Ts;
+        xd2guji += dot_xd2guji * Ts;
+
 
         //! 控制器设计 公式 15
-        
-        s1 += xE * Ts;
-        s2 += yE * Ts;
 
-        u1 = dotXR - kx1 * xE - kx2 * s1;
-        u2 = dotYR - ky1 * yE - ky2 * s2;
+        u1 = dotXR - kx * xE - xd1guji;
+        u2 = dotYR - ky * yE - xd2guji;
        
-
         vc = cos(theta) * u1 + sin(theta) * u2;
         wc = 1.0/d * (((-sin(theta)) * u1 + cos(theta) * u2));
+
 
         //! 发送指令
         std::cout << "(x, y,theta): " << x << ", " << y << ", " << theta << std::endl;
@@ -129,9 +148,8 @@ int main(int argc, char **argv)
 
         //! 保存数据
         
-
-        ofs << x << '\t' << y << '\t' << theta <<'\t'<< xR << '\t' << yR << '\t' << thetaR << '\t' << vc
-        << '\t' << wc << std::endl;
+        ofs << x << ',' << y << ',' << theta <<','<< xR << ',' << yR << ',' << thetaR << ',' << vc
+        << ',' << wc << ',' << x1 << ',' << x1guji  << ',' <<  xE << ',' << x2 << ',' << x2guji << std::endl;
 
         bunker.SetMotionCommand(vc, wc);
         
