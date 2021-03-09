@@ -196,6 +196,20 @@ app_hunter_demo/fast:
 .PHONY : app_hunter_demo/fast
 
 # Convenience name for target.
+apps/CMakeFiles/app_bunker_CSMC.dir/rule:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_CSMC.dir/rule
+.PHONY : apps/CMakeFiles/app_bunker_CSMC.dir/rule
+
+# Convenience name for target.
+app_bunker_CSMC: apps/CMakeFiles/app_bunker_CSMC.dir/rule
+.PHONY : app_bunker_CSMC
+
+# fast build rule for target.
+app_bunker_CSMC/fast:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/build
+.PHONY : app_bunker_CSMC/fast
+
+# Convenience name for target.
 apps/CMakeFiles/app_bunker_demo.dir/rule:
 	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_demo.dir/rule
 .PHONY : apps/CMakeFiles/app_bunker_demo.dir/rule
@@ -208,6 +222,30 @@ app_bunker_demo: apps/CMakeFiles/app_bunker_demo.dir/rule
 app_bunker_demo/fast:
 	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_demo.dir/build.make apps/CMakeFiles/app_bunker_demo.dir/build
 .PHONY : app_bunker_demo/fast
+
+bunker_demo/bunker_CSMC_NDOB.o: bunker_demo/bunker_CSMC_NDOB.cpp.o
+.PHONY : bunker_demo/bunker_CSMC_NDOB.o
+
+# target to build an object file
+bunker_demo/bunker_CSMC_NDOB.cpp.o:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/bunker_demo/bunker_CSMC_NDOB.cpp.o
+.PHONY : bunker_demo/bunker_CSMC_NDOB.cpp.o
+
+bunker_demo/bunker_CSMC_NDOB.i: bunker_demo/bunker_CSMC_NDOB.cpp.i
+.PHONY : bunker_demo/bunker_CSMC_NDOB.i
+
+# target to preprocess a source file
+bunker_demo/bunker_CSMC_NDOB.cpp.i:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/bunker_demo/bunker_CSMC_NDOB.cpp.i
+.PHONY : bunker_demo/bunker_CSMC_NDOB.cpp.i
+
+bunker_demo/bunker_CSMC_NDOB.s: bunker_demo/bunker_CSMC_NDOB.cpp.s
+.PHONY : bunker_demo/bunker_CSMC_NDOB.s
+
+# target to generate assembly for a file
+bunker_demo/bunker_CSMC_NDOB.cpp.s:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/bunker_demo/bunker_CSMC_NDOB.cpp.s
+.PHONY : bunker_demo/bunker_CSMC_NDOB.cpp.s
 
 bunker_demo/bunker_demo.o: bunker_demo/bunker_demo.cpp.o
 .PHONY : bunker_demo/bunker_demo.o
@@ -271,8 +309,12 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... app_bunker_CSMC"
 	@echo "... app_bunker_demo"
 	@echo "... app_hunter_demo"
+	@echo "... bunker_demo/bunker_CSMC_NDOB.o"
+	@echo "... bunker_demo/bunker_CSMC_NDOB.i"
+	@echo "... bunker_demo/bunker_CSMC_NDOB.s"
 	@echo "... bunker_demo/bunker_demo.o"
 	@echo "... bunker_demo/bunker_demo.i"
 	@echo "... bunker_demo/bunker_demo.s"

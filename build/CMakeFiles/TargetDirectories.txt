@@ -24,6 +24,7 @@
 /home/wxc/Documents/agx_sdk/build/apps/CMakeFiles/rebuild_cache.dir
 /home/wxc/Documents/agx_sdk/build/apps/CMakeFiles/package.dir
 /home/wxc/Documents/agx_sdk/build/apps/CMakeFiles/app_hunter_demo.dir
+/home/wxc/Documents/agx_sdk/build/apps/CMakeFiles/app_bunker_CSMC.dir
 /home/wxc/Documents/agx_sdk/build/apps/CMakeFiles/app_bunker_demo.dir
 /home/wxc/Documents/agx_sdk/build/apps/scout_monitor/CMakeFiles/install/strip.dir
 /home/wxc/Documents/agx_sdk/build/apps/scout_monitor/CMakeFiles/install/local.dir

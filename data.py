@@ -16,8 +16,8 @@ def loadData(filePath):
     xR = []
     yR = []
     thetaR = []
-    x1guji = []
     xE = []
+    yE = []
 
     for line in lines:
         items = line.strip().split(',')
@@ -29,15 +29,15 @@ def loadData(filePath):
         yR.append(float(items[4]))
         thetaR.append(float(items[5]))
 
-        x1guji.append(float(items[-4]))
-        xE.append(float(items[-3]))
+        xE.append(float(items[-2]))
+        yE.append(float(items[-1]))
 
 
-    return x, y, theta, xR, yR, thetaR, x1guji,xE, length
+    return x, y, theta, xR, yR, thetaR, xE, yE, length
 
 
 if __name__ == '__main__':
-    x, y, theta, xR, yR, thetaR, x1guji, xE, length = loadData('data.txt')
+    x, y, theta, xR, yR, thetaR0, xE, yE, length = loadData('data.txt')
     t = list(range(1, length+1))
 
 
@@ -47,11 +47,35 @@ plt.title('trace')
 
 
 
-plt.plot(xE, linestyle='--')
-#plt.plot(x, ep_1, linestyle='--')
-# plt.plot(x, ep_2, linestyle=':')
-plt.plot(x1guji)
-plt.legend(('xE', 'guji'), loc='upper right')
+plt.figure(1)
+
+plt.plot(xR, linestyle='--')
+plt.plot(x)
+plt.legend(('xR', 'x'), loc='upper right')
+
+
+
+plt.figure(2)
+
+plt.plot(yR, linestyle='--')
+plt.plot(y)
+plt.legend(('yR', 'y'), loc='upper right')
+
+
+plt.figure(3)
+plt.plot(x)
+plt.plot(xE)
+plt.legend(('x','xE'),loc = 'upper right')
+
+plt.figure(4)
+plt.plot(y)
+plt.plot(yE)
+plt.legend(('y','yE'),loc = 'upper right')
+
+
+
+
+
 
 plt.show()
 

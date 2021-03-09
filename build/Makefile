@@ -208,6 +208,19 @@ app_hunter_demo/fast:
 .PHONY : app_hunter_demo/fast
 
 #=============================================================================
+# Target rules for targets named app_bunker_CSMC
+
+# Build rule for target.
+app_bunker_CSMC: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_bunker_CSMC
+.PHONY : app_bunker_CSMC
+
+# fast build rule for target.
+app_bunker_CSMC/fast:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/build
+.PHONY : app_bunker_CSMC/fast
+
+#=============================================================================
 # Target rules for targets named app_bunker_demo
 
 # Build rule for target.
@@ -596,6 +609,7 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... app_bunker_CSMC"
 	@echo "... app_bunker_demo"
 	@echo "... app_hunter_demo"
 	@echo "... app_scout_monitor"
