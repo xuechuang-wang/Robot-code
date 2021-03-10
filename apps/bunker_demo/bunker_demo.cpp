@@ -4,7 +4,7 @@
 #include <cmath>
 #include <fstream>
 
-//!  线性自抗扰控制 + ESO
+//!  线性自抗扰控制
 
 int main(int argc, char **argv)
 {

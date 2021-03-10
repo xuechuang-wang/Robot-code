@@ -25,6 +25,7 @@ def loadData(filePath):
         x.append(float(items[0]))
         y.append(float(items[1]))
         theta.append(float(items[2]))
+        
         xR.append(float(items[3]))
         yR.append(float(items[4]))
         thetaR.append(float(items[5]))
