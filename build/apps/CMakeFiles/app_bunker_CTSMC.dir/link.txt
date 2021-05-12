@@ -1,0 +1,1 @@
+/bin/g++-9 -g CMakeFiles/app_bunker_CTSMC.dir/bunker_demo/bunker_CTSMC_SMO.cpp.o -o ../bin/app_bunker_CTSMC  ../lib/libwrp_sdk.a -lpthread 

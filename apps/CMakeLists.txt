@@ -11,6 +11,9 @@ target_link_libraries(app_bunker_demo wrp_sdk)
 add_executable(app_bunker_CSMC bunker_demo/bunker_CSMC_NDOB.cpp)
 target_link_libraries(app_bunker_CSMC wrp_sdk)
 
+add_executable(app_bunker_CTSMC bunker_demo/bunker_CTSMC_SMO.cpp)
+target_link_libraries(app_bunker_CTSMC wrp_sdk)
+
 # add_executable(app_scout_discharge scout_demo/scout_discharge.cpp)
 # target_link_libraries(app_scout_discharge wrp_sdk)
 

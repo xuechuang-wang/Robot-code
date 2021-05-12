@@ -76,6 +76,11 @@
 },
 {
   "directory": "/home/wxc/Documents/agx_sdk/build/apps",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_bunker_CTSMC.dir/bunker_demo/bunker_CTSMC_SMO.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CTSMC_SMO.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CTSMC_SMO.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps",
   "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_bunker_CSMC.dir/bunker_demo/bunker_CSMC_NDOB.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CSMC_NDOB.cpp",
   "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CSMC_NDOB.cpp"
 },

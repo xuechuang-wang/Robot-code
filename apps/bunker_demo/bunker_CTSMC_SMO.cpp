@@ -4,7 +4,7 @@
 #include <cmath>
 #include <fstream>
 
-//!  CSMC + NDOB
+//!  CTSMC + SMO
 
 int main(int argc, char **argv)
 {
@@ -41,8 +41,8 @@ int main(int argc, char **argv)
     double dotX = 0;
     double dotY = 0;
     double dotTheta = 0;
-    double x = 0;
-    double y = 0;
+    double x = 3;   //? 初始位置
+    double y = 4;
     double theta = 0;
     double d = 0.1;        //? 控制器增益
     double Ts = 0.02;      //? 控制周期： 20 ms
@@ -51,20 +51,23 @@ int main(int argc, char **argv)
     double dotYR = 0;
     double dotThetaR = 0;
 
-    double xR = 0;
-    double yR = 0;
+    double xR = 3;  //? 初始位置
+    double yR = 4;
     double thetaR = 0;
     double vR = 0.5;         //? 给定线速度
-    double wR = 0;           //? 给定角速度
+    double wR = 0.2;           //? 给定角速度
 
     double vc = 0;              //? 控制器输出量
     double wc = 0;              //? 控制器输出量
     double v = 0;               //? 移动机器人实际线速度
     double w = 0;               //? 移动机器人实际角速度
-    double c1 = 0.8;      //? 控制器增益
-    double c2 = 0.8;      //? 控制器增益
-    double k1 = 0.02;      //? 控制器增益
-    double k2 = 0.02;      //? 控制器增益
+    double c1 = 2;      //? 控制器增益
+    double c2 = 2;      //? 控制器增益
+    double k1 = 0.01;      //? 控制器增益
+    double k2 = 0.01;      //? 控制器增益
+    double alpha1 = 0.8;
+    double alpha2 = 0.8;  //? 终端指数
+
     double u1 = 0;      //? 控制器1
     double u2 = 0;      //? 控制器2
 
@@ -74,6 +77,11 @@ int main(int argc, char **argv)
     double signs2 = 0;
     double signs1_jifen = 0;
     double signs2_jifen = 0;
+
+    double signxE = 0;
+    double signyE = 0;
+
+
 
 
     double xE = 0;  //? X方向 误差
@@ -86,23 +94,36 @@ int main(int argc, char **argv)
     double xE_Last = 0; //? 上一秒 xE 的误差
     double yE_Last = 0;
 
-    double ds = 0;
-    //! 定义 NDOB变量
-    double p1 = 0;
-    double p2 = 0;
-    double dotp1 = 0;
-    double dotp2 = 0;
-    double rou1 = 0;
-    double rou2 = 0;
-    double rou1_guji = 0;
-    double rou2_guji = 0;
+    double ds1 = 0;  
+    double ds2 = 0;
 
-    //! 定义 NDOB参数
-    double l1 = 1;
-    double l2 = 1;
 
-    // double l1 = 0;
-    // double l2 = 0;
+    //! 定义 SMO变量
+    double z11 = 0;   //? x 的估计
+    double z12 = 0;  //?  -Dsin(t/40) 的估计
+    double dotz11 = 0;
+    double dotz12 = 0;
+    double z21 = 0;   //? y 的估计
+    double z22 = 0;   //?  Dcos(t/40) 的估计
+    double dotz21 = 0;
+    double dotz22 = 0;
+
+    double sign_z11_x = 0;
+    double sign_z21_y = 0;
+
+
+
+    //! 定义 SMO变量
+    double lamada11 = 0;
+    double lamada21 = 0;
+    double lamada10 = 0;
+    double lamada20 = 0;
+
+    //! 定义 SMO参数
+    double L = 0.01;
+    // double L = 0;
+
+
 
 
 
@@ -118,16 +139,17 @@ int main(int argc, char **argv)
         std::cout << "velocity (linear, angular): " << state.linear_velocity << ", " << state.angular_velocity << std::endl;
         std::cout << "--------------- " << std::endl;
 
-        //! 里程计 公式 7
+        //! 运动学模型
         v = state.linear_velocity;
         w = state.angular_velocity;
 
         dotTheta = w;
-        theta += dotTheta * Ts;
-        dotX = v * cos(theta) - w * d * sin(theta) - ds;
-        dotY = v * sin(theta) + w * d * cos(theta) + ds;
+        theta += dotTheta * Ts;   // dotTheta 积分 == theta
 
-        x += dotX * Ts;
+        dotX = v * cos(theta) - w * d * sin(theta) - ds1;
+        dotY = v * sin(theta) + w * d * cos(theta) + ds2;
+
+        x += dotX * Ts;   
         y += dotY * Ts;
 
         //! 轨迹规划模块 公式 8
@@ -135,13 +157,14 @@ int main(int argc, char **argv)
         thetaR += dotThetaR * Ts;
         dotXR = vR * cos(thetaR) - wR * d * sin(thetaR);
         dotYR = vR * sin(thetaR) + wR * d * cos(thetaR);
+
         // 10 s 之后
         if(count>500)
         {
-            vR = 0.5;
-            wR = 0.2;
-            // ds = 0.1 * cos(count*Ts/10.0)*cos(count*Ts/10.0);
-            ds = 0;
+            ds1 = 0.1 * sin(count*Ts/40.0);
+            ds2 = 0.1 * cos(count*Ts/40.0);
+            // ds1 = 0;
+            // ds2 = 0;
         }
         xR += dotXR * Ts;  
         yR += dotYR * Ts;
@@ -157,17 +180,39 @@ int main(int argc, char **argv)
         dotyE = (yE - yE_Last) / Ts ; //? 一阶导的求法第一步
         yE_Last = yE;                //?  一阶导的求法第二步
        
-        //!  NDOB
-        dotp1 = -l1 * p1 - l1 * l1 * x - l1 * u1;
-        dotp2 = -l2 * p2 - l2 * l2 * y - l2 * u2;
-        p1 += dotp1 * Ts;
-        p2 += dotp2 * Ts;
-        rou1_guji = p1 + l1 * x;
-        rou2_guji = p2 + l2 * y; 
+        //!  SMO
+        if( z11-x > 0)  //? s1 符号函数表示
+        {
+            sign_z11_x = 1;
+        }
+        else 
+        {
+           sign_z11_x  = -1;
+        }
+
+        if( z21-y > 0)  //? s1 符号函数表示
+        {
+            sign_z21_y = 1;
+        }
+        else 
+        {
+            sign_z21_y = -1;
+        }
+
+         lamada11 = lamada21 = 1.5*pow(L, 0.5);
+         lamada10 = lamada20 = 1.1 * L;
+        
+        dotz11 = u1 + z12 - lamada11 * pow(fabs(z11-x),0.5)  * sign_z11_x;
+        dotz21 = u2 + z22 - lamada21 * pow(fabs(z21-y),0.5)  * sign_z21_y;
+        z11 += dotz11 * Ts;
+        z21 += dotz21 * Ts;
+
+        dotz12 = -lamada10 * sign_z11_x;
+        dotz22 = -lamada20 * sign_z21_y;
+        z12 += dotz12 * Ts;
+        z22 += dotz22 * Ts;
 
         //! 控制器设计 公式 15
-        s1 = c1 * xE + dotxE;
-        s2 = c2 * yE + dotyE;
 
         if(s1 > 0)  //? s1 符号函数表示
         {
@@ -187,11 +232,34 @@ int main(int argc, char **argv)
             signs2 = -1;
         }
 
+        if(xE > 0)  //? sgn(ex)
+        {
+            signxE = 1;            
+        }
+        else
+        {
+            signxE = -1;
+        }
+        
+        if(yE > 0)  //? sgn(ey)
+        {
+            signyE = 1;            
+        }
+        else
+        {
+            signyE = -1;
+        }
+
+
+
+        s1 = c1 * signxE * pow(fabs(xE),alpha1) + dotxE;
+        s2 = c2 * signyE * pow(fabs(yE),alpha2) + dotyE;
+
         signs1_jifen += signs1 * Ts;
         signs2_jifen += signs2 * Ts;
 
-        u1 = dotXR + c1 * xE + k1 * signs1_jifen - rou1_guji;
-        u2 = dotYR + c2 * yE + k2 * signs2_jifen - rou2_guji;
+        u1 = dotXR + c1 * signxE * pow(fabs(xE),alpha1) + k1 * signs1_jifen - z12;
+        u2 = dotYR + c2 * signyE * pow(fabs(yE),alpha2) + k2 * signs2_jifen - z22;
 
         
         vc = cos(theta) * u1 + sin(theta) * u2;
@@ -211,8 +279,8 @@ int main(int argc, char **argv)
         wE = wc - w;
         
         ofs << x << ',' << y <<','<< xR << ',' << yR << ',' << -xE
-        << ',' << -yE <<',' << vc << ',' << wc << ',' << vE << ','  << wE << ','<< rou1_guji
-        << ',' << rou2_guji << std::endl;
+        << ',' << -yE <<',' << vc << ',' << wc << ',' << vE << ','  << wE << ','<< z12
+        << ',' << z22 << std::endl;
 
         bunker.SetMotionCommand(vc, wc);
 

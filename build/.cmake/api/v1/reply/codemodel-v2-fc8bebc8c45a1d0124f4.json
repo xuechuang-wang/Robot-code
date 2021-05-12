@@ -20,7 +20,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						5
+						6
 					]
 				},
 				{
@@ -50,7 +50,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				},
 				{
@@ -68,7 +69,7 @@
 					"source" : "apps/scout_monitor",
 					"targetIndexes" : 
 					[
-						4
+						5
 					]
 				},
 				{
@@ -82,7 +83,7 @@
 					"source" : "apps/scout_monitor/app",
 					"targetIndexes" : 
 					[
-						3
+						4
 					]
 				}
 			],
@@ -109,7 +110,8 @@
 						2,
 						3,
 						4,
-						5
+						5,
+						6
 					]
 				},
 				{
@@ -132,6 +134,13 @@
 				},
 				{
 					"directoryIndex" : 2,
+					"id" : "app_bunker_CTSMC::@9e189ee61a034fc9b705",
+					"jsonFile" : "target-app_bunker_CTSMC-Debug-168be7b1d0e31e4f7fde.json",
+					"name" : "app_bunker_CTSMC",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
 					"id" : "app_bunker_demo::@9e189ee61a034fc9b705",
 					"jsonFile" : "target-app_bunker_demo-Debug-bf8a91dbc68ec1c1b64b.json",
 					"name" : "app_bunker_demo",
@@ -140,7 +149,7 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "app_hunter_demo::@9e189ee61a034fc9b705",
-					"jsonFile" : "target-app_hunter_demo-Debug-1cf059ee3141f06d135e.json",
+					"jsonFile" : "target-app_hunter_demo-Debug-f98a451fdeccaf829e70.json",
 					"name" : "app_hunter_demo",
 					"projectIndex" : 0
 				},

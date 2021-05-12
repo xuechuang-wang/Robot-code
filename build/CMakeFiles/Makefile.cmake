@@ -75,6 +75,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/wrp_sdk.dir/DependInfo.cmake"
   "apps/CMakeFiles/app_hunter_demo.dir/DependInfo.cmake"
+  "apps/CMakeFiles/app_bunker_CTSMC.dir/DependInfo.cmake"
   "apps/CMakeFiles/app_bunker_CSMC.dir/DependInfo.cmake"
   "apps/CMakeFiles/app_bunker_demo.dir/DependInfo.cmake"
   "apps/scout_monitor/CMakeFiles/monitor.dir/DependInfo.cmake"
