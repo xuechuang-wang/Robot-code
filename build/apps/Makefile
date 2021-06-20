@@ -77,38 +77,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-.PHONY : edit_cache/fast
-
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/wxc/Documents/agx_sdk/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/wxc/Documents/agx_sdk/build/CPackSourceConfig.cmake
-.PHONY : package_source
-
-# Special rule for the target package_source
-package_source/fast: package_source
-.PHONY : package_source/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -121,6 +89,28 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/wxc/Documents/agx_sdk/build && /usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -129,6 +119,16 @@ list_install_components:
 # Special rule for the target list_install_components
 list_install_components/fast: list_install_components
 .PHONY : list_install_components/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/wxc/Documents/agx_sdk/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/wxc/Documents/agx_sdk/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+.PHONY : package_source/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -140,15 +140,15 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/wxc/Documents/agx_sdk/build && /usr/bin/cpack --config ./CPackConfig.cmake
-.PHONY : package
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target package
-package/fast: package
-.PHONY : package/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -182,18 +182,18 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-apps/CMakeFiles/app_hunter_demo.dir/rule:
-	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_hunter_demo.dir/rule
-.PHONY : apps/CMakeFiles/app_hunter_demo.dir/rule
+apps/CMakeFiles/app_bunker_demo.dir/rule:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_demo.dir/rule
+.PHONY : apps/CMakeFiles/app_bunker_demo.dir/rule
 
 # Convenience name for target.
-app_hunter_demo: apps/CMakeFiles/app_hunter_demo.dir/rule
-.PHONY : app_hunter_demo
+app_bunker_demo: apps/CMakeFiles/app_bunker_demo.dir/rule
+.PHONY : app_bunker_demo
 
 # fast build rule for target.
-app_hunter_demo/fast:
-	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/build
-.PHONY : app_hunter_demo/fast
+app_bunker_demo/fast:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_demo.dir/build.make apps/CMakeFiles/app_bunker_demo.dir/build
+.PHONY : app_bunker_demo/fast
 
 # Convenience name for target.
 apps/CMakeFiles/app_bunker_CTSMC.dir/rule:
@@ -210,6 +210,20 @@ app_bunker_CTSMC/fast:
 .PHONY : app_bunker_CTSMC/fast
 
 # Convenience name for target.
+apps/CMakeFiles/app_bunker_CTSMCL.dir/rule:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_CTSMCL.dir/rule
+.PHONY : apps/CMakeFiles/app_bunker_CTSMCL.dir/rule
+
+# Convenience name for target.
+app_bunker_CTSMCL: apps/CMakeFiles/app_bunker_CTSMCL.dir/rule
+.PHONY : app_bunker_CTSMCL
+
+# fast build rule for target.
+app_bunker_CTSMCL/fast:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMCL.dir/build.make apps/CMakeFiles/app_bunker_CTSMCL.dir/build
+.PHONY : app_bunker_CTSMCL/fast
+
+# Convenience name for target.
 apps/CMakeFiles/app_bunker_CSMC.dir/rule:
 	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_CSMC.dir/rule
 .PHONY : apps/CMakeFiles/app_bunker_CSMC.dir/rule
@@ -224,18 +238,108 @@ app_bunker_CSMC/fast:
 .PHONY : app_bunker_CSMC/fast
 
 # Convenience name for target.
-apps/CMakeFiles/app_bunker_demo.dir/rule:
-	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_demo.dir/rule
-.PHONY : apps/CMakeFiles/app_bunker_demo.dir/rule
+apps/CMakeFiles/app_CSMC_Luo.dir/rule:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_CSMC_Luo.dir/rule
+.PHONY : apps/CMakeFiles/app_CSMC_Luo.dir/rule
 
 # Convenience name for target.
-app_bunker_demo: apps/CMakeFiles/app_bunker_demo.dir/rule
-.PHONY : app_bunker_demo
+app_CSMC_Luo: apps/CMakeFiles/app_CSMC_Luo.dir/rule
+.PHONY : app_CSMC_Luo
 
 # fast build rule for target.
-app_bunker_demo/fast:
-	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_demo.dir/build.make apps/CMakeFiles/app_bunker_demo.dir/build
-.PHONY : app_bunker_demo/fast
+app_CSMC_Luo/fast:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Luo.dir/build.make apps/CMakeFiles/app_CSMC_Luo.dir/build
+.PHONY : app_CSMC_Luo/fast
+
+# Convenience name for target.
+apps/CMakeFiles/app_PI.dir/rule:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_PI.dir/rule
+.PHONY : apps/CMakeFiles/app_PI.dir/rule
+
+# Convenience name for target.
+app_PI: apps/CMakeFiles/app_PI.dir/rule
+.PHONY : app_PI
+
+# fast build rule for target.
+app_PI/fast:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_PI.dir/build.make apps/CMakeFiles/app_PI.dir/build
+.PHONY : app_PI/fast
+
+# Convenience name for target.
+apps/CMakeFiles/app_CSMC_Cir.dir/rule:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_CSMC_Cir.dir/rule
+.PHONY : apps/CMakeFiles/app_CSMC_Cir.dir/rule
+
+# Convenience name for target.
+app_CSMC_Cir: apps/CMakeFiles/app_CSMC_Cir.dir/rule
+.PHONY : app_CSMC_Cir
+
+# fast build rule for target.
+app_CSMC_Cir/fast:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Cir.dir/build.make apps/CMakeFiles/app_CSMC_Cir.dir/build
+.PHONY : app_CSMC_Cir/fast
+
+# Convenience name for target.
+apps/CMakeFiles/app_hunter_demo.dir/rule:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_hunter_demo.dir/rule
+.PHONY : apps/CMakeFiles/app_hunter_demo.dir/rule
+
+# Convenience name for target.
+app_hunter_demo: apps/CMakeFiles/app_hunter_demo.dir/rule
+.PHONY : app_hunter_demo
+
+# fast build rule for target.
+app_hunter_demo/fast:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/build
+.PHONY : app_hunter_demo/fast
+
+bunker_demo/bunker_CSMC_Circle.o: bunker_demo/bunker_CSMC_Circle.cpp.o
+.PHONY : bunker_demo/bunker_CSMC_Circle.o
+
+# target to build an object file
+bunker_demo/bunker_CSMC_Circle.cpp.o:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Cir.dir/build.make apps/CMakeFiles/app_CSMC_Cir.dir/bunker_demo/bunker_CSMC_Circle.cpp.o
+.PHONY : bunker_demo/bunker_CSMC_Circle.cpp.o
+
+bunker_demo/bunker_CSMC_Circle.i: bunker_demo/bunker_CSMC_Circle.cpp.i
+.PHONY : bunker_demo/bunker_CSMC_Circle.i
+
+# target to preprocess a source file
+bunker_demo/bunker_CSMC_Circle.cpp.i:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Cir.dir/build.make apps/CMakeFiles/app_CSMC_Cir.dir/bunker_demo/bunker_CSMC_Circle.cpp.i
+.PHONY : bunker_demo/bunker_CSMC_Circle.cpp.i
+
+bunker_demo/bunker_CSMC_Circle.s: bunker_demo/bunker_CSMC_Circle.cpp.s
+.PHONY : bunker_demo/bunker_CSMC_Circle.s
+
+# target to generate assembly for a file
+bunker_demo/bunker_CSMC_Circle.cpp.s:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Cir.dir/build.make apps/CMakeFiles/app_CSMC_Cir.dir/bunker_demo/bunker_CSMC_Circle.cpp.s
+.PHONY : bunker_demo/bunker_CSMC_Circle.cpp.s
+
+bunker_demo/bunker_CSMC_LuoXuan.o: bunker_demo/bunker_CSMC_LuoXuan.cpp.o
+.PHONY : bunker_demo/bunker_CSMC_LuoXuan.o
+
+# target to build an object file
+bunker_demo/bunker_CSMC_LuoXuan.cpp.o:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Luo.dir/build.make apps/CMakeFiles/app_CSMC_Luo.dir/bunker_demo/bunker_CSMC_LuoXuan.cpp.o
+.PHONY : bunker_demo/bunker_CSMC_LuoXuan.cpp.o
+
+bunker_demo/bunker_CSMC_LuoXuan.i: bunker_demo/bunker_CSMC_LuoXuan.cpp.i
+.PHONY : bunker_demo/bunker_CSMC_LuoXuan.i
+
+# target to preprocess a source file
+bunker_demo/bunker_CSMC_LuoXuan.cpp.i:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Luo.dir/build.make apps/CMakeFiles/app_CSMC_Luo.dir/bunker_demo/bunker_CSMC_LuoXuan.cpp.i
+.PHONY : bunker_demo/bunker_CSMC_LuoXuan.cpp.i
+
+bunker_demo/bunker_CSMC_LuoXuan.s: bunker_demo/bunker_CSMC_LuoXuan.cpp.s
+.PHONY : bunker_demo/bunker_CSMC_LuoXuan.s
+
+# target to generate assembly for a file
+bunker_demo/bunker_CSMC_LuoXuan.cpp.s:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Luo.dir/build.make apps/CMakeFiles/app_CSMC_Luo.dir/bunker_demo/bunker_CSMC_LuoXuan.cpp.s
+.PHONY : bunker_demo/bunker_CSMC_LuoXuan.cpp.s
 
 bunker_demo/bunker_CSMC_NDOB.o: bunker_demo/bunker_CSMC_NDOB.cpp.o
 .PHONY : bunker_demo/bunker_CSMC_NDOB.o
@@ -284,6 +388,54 @@ bunker_demo/bunker_CTSMC_SMO.s: bunker_demo/bunker_CTSMC_SMO.cpp.s
 bunker_demo/bunker_CTSMC_SMO.cpp.s:
 	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMC.dir/build.make apps/CMakeFiles/app_bunker_CTSMC.dir/bunker_demo/bunker_CTSMC_SMO.cpp.s
 .PHONY : bunker_demo/bunker_CTSMC_SMO.cpp.s
+
+bunker_demo/bunker_CTSMO_Luo.o: bunker_demo/bunker_CTSMO_Luo.cpp.o
+.PHONY : bunker_demo/bunker_CTSMO_Luo.o
+
+# target to build an object file
+bunker_demo/bunker_CTSMO_Luo.cpp.o:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMCL.dir/build.make apps/CMakeFiles/app_bunker_CTSMCL.dir/bunker_demo/bunker_CTSMO_Luo.cpp.o
+.PHONY : bunker_demo/bunker_CTSMO_Luo.cpp.o
+
+bunker_demo/bunker_CTSMO_Luo.i: bunker_demo/bunker_CTSMO_Luo.cpp.i
+.PHONY : bunker_demo/bunker_CTSMO_Luo.i
+
+# target to preprocess a source file
+bunker_demo/bunker_CTSMO_Luo.cpp.i:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMCL.dir/build.make apps/CMakeFiles/app_bunker_CTSMCL.dir/bunker_demo/bunker_CTSMO_Luo.cpp.i
+.PHONY : bunker_demo/bunker_CTSMO_Luo.cpp.i
+
+bunker_demo/bunker_CTSMO_Luo.s: bunker_demo/bunker_CTSMO_Luo.cpp.s
+.PHONY : bunker_demo/bunker_CTSMO_Luo.s
+
+# target to generate assembly for a file
+bunker_demo/bunker_CTSMO_Luo.cpp.s:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMCL.dir/build.make apps/CMakeFiles/app_bunker_CTSMCL.dir/bunker_demo/bunker_CTSMO_Luo.cpp.s
+.PHONY : bunker_demo/bunker_CTSMO_Luo.cpp.s
+
+bunker_demo/bunker_PI.o: bunker_demo/bunker_PI.cpp.o
+.PHONY : bunker_demo/bunker_PI.o
+
+# target to build an object file
+bunker_demo/bunker_PI.cpp.o:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_PI.dir/build.make apps/CMakeFiles/app_PI.dir/bunker_demo/bunker_PI.cpp.o
+.PHONY : bunker_demo/bunker_PI.cpp.o
+
+bunker_demo/bunker_PI.i: bunker_demo/bunker_PI.cpp.i
+.PHONY : bunker_demo/bunker_PI.i
+
+# target to preprocess a source file
+bunker_demo/bunker_PI.cpp.i:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_PI.dir/build.make apps/CMakeFiles/app_PI.dir/bunker_demo/bunker_PI.cpp.i
+.PHONY : bunker_demo/bunker_PI.cpp.i
+
+bunker_demo/bunker_PI.s: bunker_demo/bunker_PI.cpp.s
+.PHONY : bunker_demo/bunker_PI.s
+
+# target to generate assembly for a file
+bunker_demo/bunker_PI.cpp.s:
+	cd /home/wxc/Documents/agx_sdk/build && $(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_PI.dir/build.make apps/CMakeFiles/app_PI.dir/bunker_demo/bunker_PI.cpp.s
+.PHONY : bunker_demo/bunker_PI.cpp.s
 
 bunker_demo/bunker_demo.o: bunker_demo/bunker_demo.cpp.o
 .PHONY : bunker_demo/bunker_demo.o
@@ -347,16 +499,32 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... app_CSMC_Cir"
+	@echo "... app_CSMC_Luo"
+	@echo "... app_PI"
 	@echo "... app_bunker_CSMC"
 	@echo "... app_bunker_CTSMC"
+	@echo "... app_bunker_CTSMCL"
 	@echo "... app_bunker_demo"
 	@echo "... app_hunter_demo"
+	@echo "... bunker_demo/bunker_CSMC_Circle.o"
+	@echo "... bunker_demo/bunker_CSMC_Circle.i"
+	@echo "... bunker_demo/bunker_CSMC_Circle.s"
+	@echo "... bunker_demo/bunker_CSMC_LuoXuan.o"
+	@echo "... bunker_demo/bunker_CSMC_LuoXuan.i"
+	@echo "... bunker_demo/bunker_CSMC_LuoXuan.s"
 	@echo "... bunker_demo/bunker_CSMC_NDOB.o"
 	@echo "... bunker_demo/bunker_CSMC_NDOB.i"
 	@echo "... bunker_demo/bunker_CSMC_NDOB.s"
 	@echo "... bunker_demo/bunker_CTSMC_SMO.o"
 	@echo "... bunker_demo/bunker_CTSMC_SMO.i"
 	@echo "... bunker_demo/bunker_CTSMC_SMO.s"
+	@echo "... bunker_demo/bunker_CTSMO_Luo.o"
+	@echo "... bunker_demo/bunker_CTSMO_Luo.i"
+	@echo "... bunker_demo/bunker_CTSMO_Luo.s"
+	@echo "... bunker_demo/bunker_PI.o"
+	@echo "... bunker_demo/bunker_PI.i"
+	@echo "... bunker_demo/bunker_PI.s"
 	@echo "... bunker_demo/bunker_demo.o"
 	@echo "... bunker_demo/bunker_demo.i"
 	@echo "... bunker_demo/bunker_demo.s"

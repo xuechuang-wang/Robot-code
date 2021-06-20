@@ -195,17 +195,17 @@ wrp_sdk/fast:
 .PHONY : wrp_sdk/fast
 
 #=============================================================================
-# Target rules for targets named app_hunter_demo
+# Target rules for targets named app_bunker_demo
 
 # Build rule for target.
-app_hunter_demo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_hunter_demo
-.PHONY : app_hunter_demo
+app_bunker_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_bunker_demo
+.PHONY : app_bunker_demo
 
 # fast build rule for target.
-app_hunter_demo/fast:
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/build
-.PHONY : app_hunter_demo/fast
+app_bunker_demo/fast:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_demo.dir/build.make apps/CMakeFiles/app_bunker_demo.dir/build
+.PHONY : app_bunker_demo/fast
 
 #=============================================================================
 # Target rules for targets named app_bunker_CTSMC
@@ -221,6 +221,19 @@ app_bunker_CTSMC/fast:
 .PHONY : app_bunker_CTSMC/fast
 
 #=============================================================================
+# Target rules for targets named app_bunker_CTSMCL
+
+# Build rule for target.
+app_bunker_CTSMCL: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_bunker_CTSMCL
+.PHONY : app_bunker_CTSMCL
+
+# fast build rule for target.
+app_bunker_CTSMCL/fast:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMCL.dir/build.make apps/CMakeFiles/app_bunker_CTSMCL.dir/build
+.PHONY : app_bunker_CTSMCL/fast
+
+#=============================================================================
 # Target rules for targets named app_bunker_CSMC
 
 # Build rule for target.
@@ -234,17 +247,56 @@ app_bunker_CSMC/fast:
 .PHONY : app_bunker_CSMC/fast
 
 #=============================================================================
-# Target rules for targets named app_bunker_demo
+# Target rules for targets named app_CSMC_Luo
 
 # Build rule for target.
-app_bunker_demo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_bunker_demo
-.PHONY : app_bunker_demo
+app_CSMC_Luo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_CSMC_Luo
+.PHONY : app_CSMC_Luo
 
 # fast build rule for target.
-app_bunker_demo/fast:
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_demo.dir/build.make apps/CMakeFiles/app_bunker_demo.dir/build
-.PHONY : app_bunker_demo/fast
+app_CSMC_Luo/fast:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Luo.dir/build.make apps/CMakeFiles/app_CSMC_Luo.dir/build
+.PHONY : app_CSMC_Luo/fast
+
+#=============================================================================
+# Target rules for targets named app_PI
+
+# Build rule for target.
+app_PI: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_PI
+.PHONY : app_PI
+
+# fast build rule for target.
+app_PI/fast:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_PI.dir/build.make apps/CMakeFiles/app_PI.dir/build
+.PHONY : app_PI/fast
+
+#=============================================================================
+# Target rules for targets named app_CSMC_Cir
+
+# Build rule for target.
+app_CSMC_Cir: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_CSMC_Cir
+.PHONY : app_CSMC_Cir
+
+# fast build rule for target.
+app_CSMC_Cir/fast:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Cir.dir/build.make apps/CMakeFiles/app_CSMC_Cir.dir/build
+.PHONY : app_CSMC_Cir/fast
+
+#=============================================================================
+# Target rules for targets named app_hunter_demo
+
+# Build rule for target.
+app_hunter_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_hunter_demo
+.PHONY : app_hunter_demo
+
+# fast build rule for target.
+app_hunter_demo/fast:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/build
+.PHONY : app_hunter_demo/fast
 
 #=============================================================================
 # Target rules for targets named monitor
@@ -622,8 +674,12 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... app_CSMC_Cir"
+	@echo "... app_CSMC_Luo"
+	@echo "... app_PI"
 	@echo "... app_bunker_CSMC"
 	@echo "... app_bunker_CTSMC"
+	@echo "... app_bunker_CTSMCL"
 	@echo "... app_bunker_demo"
 	@echo "... app_hunter_demo"
 	@echo "... app_scout_monitor"

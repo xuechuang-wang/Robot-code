@@ -71,8 +71,8 @@
 },
 {
   "directory": "/home/wxc/Documents/agx_sdk/build/apps",
-  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_hunter_demo.dir/hunter_demo/hunter_demo.cpp.o -c /home/wxc/Documents/agx_sdk/apps/hunter_demo/hunter_demo.cpp",
-  "file": "/home/wxc/Documents/agx_sdk/apps/hunter_demo/hunter_demo.cpp"
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_bunker_demo.dir/bunker_demo/bunker_demo.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_demo.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_demo.cpp"
 },
 {
   "directory": "/home/wxc/Documents/agx_sdk/build/apps",
@@ -81,13 +81,33 @@
 },
 {
   "directory": "/home/wxc/Documents/agx_sdk/build/apps",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_bunker_CTSMCL.dir/bunker_demo/bunker_CTSMO_Luo.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CTSMO_Luo.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CTSMO_Luo.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps",
   "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_bunker_CSMC.dir/bunker_demo/bunker_CSMC_NDOB.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CSMC_NDOB.cpp",
   "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CSMC_NDOB.cpp"
 },
 {
   "directory": "/home/wxc/Documents/agx_sdk/build/apps",
-  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_bunker_demo.dir/bunker_demo/bunker_demo.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_demo.cpp",
-  "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_demo.cpp"
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_CSMC_Luo.dir/bunker_demo/bunker_CSMC_LuoXuan.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CSMC_LuoXuan.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CSMC_LuoXuan.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_PI.dir/bunker_demo/bunker_PI.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_PI.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_PI.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_CSMC_Cir.dir/bunker_demo/bunker_CSMC_Circle.cpp.o -c /home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CSMC_Circle.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/bunker_demo/bunker_CSMC_Circle.cpp"
+},
+{
+  "directory": "/home/wxc/Documents/agx_sdk/build/apps",
+  "command": "/bin/g++-9 -DASIO_STANDALONE -I/home/wxc/Documents/agx_sdk/include -I/home/wxc/Documents/agx_sdk/asio/include -g -std=c++11 -o CMakeFiles/app_hunter_demo.dir/hunter_demo/hunter_demo.cpp.o -c /home/wxc/Documents/agx_sdk/apps/hunter_demo/hunter_demo.cpp",
+  "file": "/home/wxc/Documents/agx_sdk/apps/hunter_demo/hunter_demo.cpp"
 },
 {
   "directory": "/home/wxc/Documents/agx_sdk/build/apps/scout_monitor",

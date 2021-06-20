@@ -83,10 +83,14 @@ clean: apps/clean
 # Directory level rules for directory apps
 
 # Recursive "all" directory target.
-apps/all: apps/CMakeFiles/app_hunter_demo.dir/all
-apps/all: apps/CMakeFiles/app_bunker_CTSMC.dir/all
-apps/all: apps/CMakeFiles/app_bunker_CSMC.dir/all
 apps/all: apps/CMakeFiles/app_bunker_demo.dir/all
+apps/all: apps/CMakeFiles/app_bunker_CTSMC.dir/all
+apps/all: apps/CMakeFiles/app_bunker_CTSMCL.dir/all
+apps/all: apps/CMakeFiles/app_bunker_CSMC.dir/all
+apps/all: apps/CMakeFiles/app_CSMC_Luo.dir/all
+apps/all: apps/CMakeFiles/app_PI.dir/all
+apps/all: apps/CMakeFiles/app_CSMC_Cir.dir/all
+apps/all: apps/CMakeFiles/app_hunter_demo.dir/all
 apps/all: apps/scout_monitor/all
 .PHONY : apps/all
 
@@ -95,10 +99,14 @@ apps/preinstall: apps/scout_monitor/preinstall
 .PHONY : apps/preinstall
 
 # Recursive "clean" directory target.
-apps/clean: apps/CMakeFiles/app_hunter_demo.dir/clean
-apps/clean: apps/CMakeFiles/app_bunker_CTSMC.dir/clean
-apps/clean: apps/CMakeFiles/app_bunker_CSMC.dir/clean
 apps/clean: apps/CMakeFiles/app_bunker_demo.dir/clean
+apps/clean: apps/CMakeFiles/app_bunker_CTSMC.dir/clean
+apps/clean: apps/CMakeFiles/app_bunker_CTSMCL.dir/clean
+apps/clean: apps/CMakeFiles/app_bunker_CSMC.dir/clean
+apps/clean: apps/CMakeFiles/app_CSMC_Luo.dir/clean
+apps/clean: apps/CMakeFiles/app_PI.dir/clean
+apps/clean: apps/CMakeFiles/app_CSMC_Cir.dir/clean
+apps/clean: apps/CMakeFiles/app_hunter_demo.dir/clean
 apps/clean: apps/scout_monitor/clean
 .PHONY : apps/clean
 
@@ -156,7 +164,7 @@ asio/clean:
 CMakeFiles/wrp_sdk.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wrp_sdk.dir/build.make CMakeFiles/wrp_sdk.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wrp_sdk.dir/build.make CMakeFiles/wrp_sdk.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=15,16,17,18,19,20,21,22,23,24,25,26,27,28,29 "Built target wrp_sdk"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 "Built target wrp_sdk"
 .PHONY : CMakeFiles/wrp_sdk.dir/all
 
 # Build rule for subdir invocation for target.
@@ -176,91 +184,13 @@ CMakeFiles/wrp_sdk.dir/clean:
 .PHONY : CMakeFiles/wrp_sdk.dir/clean
 
 #=============================================================================
-# Target rules for target apps/CMakeFiles/app_hunter_demo.dir
-
-# All Build rule for target.
-apps/CMakeFiles/app_hunter_demo.dir/all: CMakeFiles/wrp_sdk.dir/all
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/depend
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=7,8 "Built target app_hunter_demo"
-.PHONY : apps/CMakeFiles/app_hunter_demo.dir/all
-
-# Build rule for subdir invocation for target.
-apps/CMakeFiles/app_hunter_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_hunter_demo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
-.PHONY : apps/CMakeFiles/app_hunter_demo.dir/rule
-
-# Convenience name for target.
-app_hunter_demo: apps/CMakeFiles/app_hunter_demo.dir/rule
-.PHONY : app_hunter_demo
-
-# clean rule for target.
-apps/CMakeFiles/app_hunter_demo.dir/clean:
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/clean
-.PHONY : apps/CMakeFiles/app_hunter_demo.dir/clean
-
-#=============================================================================
-# Target rules for target apps/CMakeFiles/app_bunker_CTSMC.dir
-
-# All Build rule for target.
-apps/CMakeFiles/app_bunker_CTSMC.dir/all: CMakeFiles/wrp_sdk.dir/all
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMC.dir/build.make apps/CMakeFiles/app_bunker_CTSMC.dir/depend
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMC.dir/build.make apps/CMakeFiles/app_bunker_CTSMC.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=3,4 "Built target app_bunker_CTSMC"
-.PHONY : apps/CMakeFiles/app_bunker_CTSMC.dir/all
-
-# Build rule for subdir invocation for target.
-apps/CMakeFiles/app_bunker_CTSMC.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_CTSMC.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
-.PHONY : apps/CMakeFiles/app_bunker_CTSMC.dir/rule
-
-# Convenience name for target.
-app_bunker_CTSMC: apps/CMakeFiles/app_bunker_CTSMC.dir/rule
-.PHONY : app_bunker_CTSMC
-
-# clean rule for target.
-apps/CMakeFiles/app_bunker_CTSMC.dir/clean:
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMC.dir/build.make apps/CMakeFiles/app_bunker_CTSMC.dir/clean
-.PHONY : apps/CMakeFiles/app_bunker_CTSMC.dir/clean
-
-#=============================================================================
-# Target rules for target apps/CMakeFiles/app_bunker_CSMC.dir
-
-# All Build rule for target.
-apps/CMakeFiles/app_bunker_CSMC.dir/all: CMakeFiles/wrp_sdk.dir/all
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/depend
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=1,2 "Built target app_bunker_CSMC"
-.PHONY : apps/CMakeFiles/app_bunker_CSMC.dir/all
-
-# Build rule for subdir invocation for target.
-apps/CMakeFiles/app_bunker_CSMC.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_CSMC.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
-.PHONY : apps/CMakeFiles/app_bunker_CSMC.dir/rule
-
-# Convenience name for target.
-app_bunker_CSMC: apps/CMakeFiles/app_bunker_CSMC.dir/rule
-.PHONY : app_bunker_CSMC
-
-# clean rule for target.
-apps/CMakeFiles/app_bunker_CSMC.dir/clean:
-	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/clean
-.PHONY : apps/CMakeFiles/app_bunker_CSMC.dir/clean
-
-#=============================================================================
 # Target rules for target apps/CMakeFiles/app_bunker_demo.dir
 
 # All Build rule for target.
 apps/CMakeFiles/app_bunker_demo.dir/all: CMakeFiles/wrp_sdk.dir/all
 	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_demo.dir/build.make apps/CMakeFiles/app_bunker_demo.dir/depend
 	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_demo.dir/build.make apps/CMakeFiles/app_bunker_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=5,6 "Built target app_bunker_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=13,14 "Built target app_bunker_demo"
 .PHONY : apps/CMakeFiles/app_bunker_demo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -280,13 +210,195 @@ apps/CMakeFiles/app_bunker_demo.dir/clean:
 .PHONY : apps/CMakeFiles/app_bunker_demo.dir/clean
 
 #=============================================================================
+# Target rules for target apps/CMakeFiles/app_bunker_CTSMC.dir
+
+# All Build rule for target.
+apps/CMakeFiles/app_bunker_CTSMC.dir/all: CMakeFiles/wrp_sdk.dir/all
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMC.dir/build.make apps/CMakeFiles/app_bunker_CTSMC.dir/depend
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMC.dir/build.make apps/CMakeFiles/app_bunker_CTSMC.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=9,10 "Built target app_bunker_CTSMC"
+.PHONY : apps/CMakeFiles/app_bunker_CTSMC.dir/all
+
+# Build rule for subdir invocation for target.
+apps/CMakeFiles/app_bunker_CTSMC.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_CTSMC.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
+.PHONY : apps/CMakeFiles/app_bunker_CTSMC.dir/rule
+
+# Convenience name for target.
+app_bunker_CTSMC: apps/CMakeFiles/app_bunker_CTSMC.dir/rule
+.PHONY : app_bunker_CTSMC
+
+# clean rule for target.
+apps/CMakeFiles/app_bunker_CTSMC.dir/clean:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMC.dir/build.make apps/CMakeFiles/app_bunker_CTSMC.dir/clean
+.PHONY : apps/CMakeFiles/app_bunker_CTSMC.dir/clean
+
+#=============================================================================
+# Target rules for target apps/CMakeFiles/app_bunker_CTSMCL.dir
+
+# All Build rule for target.
+apps/CMakeFiles/app_bunker_CTSMCL.dir/all: CMakeFiles/wrp_sdk.dir/all
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMCL.dir/build.make apps/CMakeFiles/app_bunker_CTSMCL.dir/depend
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMCL.dir/build.make apps/CMakeFiles/app_bunker_CTSMCL.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=11,12 "Built target app_bunker_CTSMCL"
+.PHONY : apps/CMakeFiles/app_bunker_CTSMCL.dir/all
+
+# Build rule for subdir invocation for target.
+apps/CMakeFiles/app_bunker_CTSMCL.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_CTSMCL.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
+.PHONY : apps/CMakeFiles/app_bunker_CTSMCL.dir/rule
+
+# Convenience name for target.
+app_bunker_CTSMCL: apps/CMakeFiles/app_bunker_CTSMCL.dir/rule
+.PHONY : app_bunker_CTSMCL
+
+# clean rule for target.
+apps/CMakeFiles/app_bunker_CTSMCL.dir/clean:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CTSMCL.dir/build.make apps/CMakeFiles/app_bunker_CTSMCL.dir/clean
+.PHONY : apps/CMakeFiles/app_bunker_CTSMCL.dir/clean
+
+#=============================================================================
+# Target rules for target apps/CMakeFiles/app_bunker_CSMC.dir
+
+# All Build rule for target.
+apps/CMakeFiles/app_bunker_CSMC.dir/all: CMakeFiles/wrp_sdk.dir/all
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/depend
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=7,8 "Built target app_bunker_CSMC"
+.PHONY : apps/CMakeFiles/app_bunker_CSMC.dir/all
+
+# Build rule for subdir invocation for target.
+apps/CMakeFiles/app_bunker_CSMC.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_bunker_CSMC.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
+.PHONY : apps/CMakeFiles/app_bunker_CSMC.dir/rule
+
+# Convenience name for target.
+app_bunker_CSMC: apps/CMakeFiles/app_bunker_CSMC.dir/rule
+.PHONY : app_bunker_CSMC
+
+# clean rule for target.
+apps/CMakeFiles/app_bunker_CSMC.dir/clean:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_bunker_CSMC.dir/build.make apps/CMakeFiles/app_bunker_CSMC.dir/clean
+.PHONY : apps/CMakeFiles/app_bunker_CSMC.dir/clean
+
+#=============================================================================
+# Target rules for target apps/CMakeFiles/app_CSMC_Luo.dir
+
+# All Build rule for target.
+apps/CMakeFiles/app_CSMC_Luo.dir/all: CMakeFiles/wrp_sdk.dir/all
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Luo.dir/build.make apps/CMakeFiles/app_CSMC_Luo.dir/depend
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Luo.dir/build.make apps/CMakeFiles/app_CSMC_Luo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=3,4 "Built target app_CSMC_Luo"
+.PHONY : apps/CMakeFiles/app_CSMC_Luo.dir/all
+
+# Build rule for subdir invocation for target.
+apps/CMakeFiles/app_CSMC_Luo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_CSMC_Luo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
+.PHONY : apps/CMakeFiles/app_CSMC_Luo.dir/rule
+
+# Convenience name for target.
+app_CSMC_Luo: apps/CMakeFiles/app_CSMC_Luo.dir/rule
+.PHONY : app_CSMC_Luo
+
+# clean rule for target.
+apps/CMakeFiles/app_CSMC_Luo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Luo.dir/build.make apps/CMakeFiles/app_CSMC_Luo.dir/clean
+.PHONY : apps/CMakeFiles/app_CSMC_Luo.dir/clean
+
+#=============================================================================
+# Target rules for target apps/CMakeFiles/app_PI.dir
+
+# All Build rule for target.
+apps/CMakeFiles/app_PI.dir/all: CMakeFiles/wrp_sdk.dir/all
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_PI.dir/build.make apps/CMakeFiles/app_PI.dir/depend
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_PI.dir/build.make apps/CMakeFiles/app_PI.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=5,6 "Built target app_PI"
+.PHONY : apps/CMakeFiles/app_PI.dir/all
+
+# Build rule for subdir invocation for target.
+apps/CMakeFiles/app_PI.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_PI.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
+.PHONY : apps/CMakeFiles/app_PI.dir/rule
+
+# Convenience name for target.
+app_PI: apps/CMakeFiles/app_PI.dir/rule
+.PHONY : app_PI
+
+# clean rule for target.
+apps/CMakeFiles/app_PI.dir/clean:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_PI.dir/build.make apps/CMakeFiles/app_PI.dir/clean
+.PHONY : apps/CMakeFiles/app_PI.dir/clean
+
+#=============================================================================
+# Target rules for target apps/CMakeFiles/app_CSMC_Cir.dir
+
+# All Build rule for target.
+apps/CMakeFiles/app_CSMC_Cir.dir/all: CMakeFiles/wrp_sdk.dir/all
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Cir.dir/build.make apps/CMakeFiles/app_CSMC_Cir.dir/depend
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Cir.dir/build.make apps/CMakeFiles/app_CSMC_Cir.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=1,2 "Built target app_CSMC_Cir"
+.PHONY : apps/CMakeFiles/app_CSMC_Cir.dir/all
+
+# Build rule for subdir invocation for target.
+apps/CMakeFiles/app_CSMC_Cir.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_CSMC_Cir.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
+.PHONY : apps/CMakeFiles/app_CSMC_Cir.dir/rule
+
+# Convenience name for target.
+app_CSMC_Cir: apps/CMakeFiles/app_CSMC_Cir.dir/rule
+.PHONY : app_CSMC_Cir
+
+# clean rule for target.
+apps/CMakeFiles/app_CSMC_Cir.dir/clean:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_CSMC_Cir.dir/build.make apps/CMakeFiles/app_CSMC_Cir.dir/clean
+.PHONY : apps/CMakeFiles/app_CSMC_Cir.dir/clean
+
+#=============================================================================
+# Target rules for target apps/CMakeFiles/app_hunter_demo.dir
+
+# All Build rule for target.
+apps/CMakeFiles/app_hunter_demo.dir/all: CMakeFiles/wrp_sdk.dir/all
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=15,16 "Built target app_hunter_demo"
+.PHONY : apps/CMakeFiles/app_hunter_demo.dir/all
+
+# Build rule for subdir invocation for target.
+apps/CMakeFiles/app_hunter_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 17
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apps/CMakeFiles/app_hunter_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wxc/Documents/agx_sdk/build/CMakeFiles 0
+.PHONY : apps/CMakeFiles/app_hunter_demo.dir/rule
+
+# Convenience name for target.
+app_hunter_demo: apps/CMakeFiles/app_hunter_demo.dir/rule
+.PHONY : app_hunter_demo
+
+# clean rule for target.
+apps/CMakeFiles/app_hunter_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f apps/CMakeFiles/app_hunter_demo.dir/build.make apps/CMakeFiles/app_hunter_demo.dir/clean
+.PHONY : apps/CMakeFiles/app_hunter_demo.dir/clean
+
+#=============================================================================
 # Target rules for target apps/scout_monitor/CMakeFiles/monitor.dir
 
 # All Build rule for target.
 apps/scout_monitor/CMakeFiles/monitor.dir/all: CMakeFiles/wrp_sdk.dir/all
 	$(MAKE) $(MAKESILENT) -f apps/scout_monitor/CMakeFiles/monitor.dir/build.make apps/scout_monitor/CMakeFiles/monitor.dir/depend
 	$(MAKE) $(MAKESILENT) -f apps/scout_monitor/CMakeFiles/monitor.dir/build.make apps/scout_monitor/CMakeFiles/monitor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=11,12,13,14 "Built target monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=19,20,21,22 "Built target monitor"
 .PHONY : apps/scout_monitor/CMakeFiles/monitor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -313,7 +425,7 @@ apps/scout_monitor/app/CMakeFiles/app_scout_monitor.dir/all: CMakeFiles/wrp_sdk.
 apps/scout_monitor/app/CMakeFiles/app_scout_monitor.dir/all: apps/scout_monitor/CMakeFiles/monitor.dir/all
 	$(MAKE) $(MAKESILENT) -f apps/scout_monitor/app/CMakeFiles/app_scout_monitor.dir/build.make apps/scout_monitor/app/CMakeFiles/app_scout_monitor.dir/depend
 	$(MAKE) $(MAKESILENT) -f apps/scout_monitor/app/CMakeFiles/app_scout_monitor.dir/build.make apps/scout_monitor/app/CMakeFiles/app_scout_monitor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=9,10 "Built target app_scout_monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wxc/Documents/agx_sdk/build/CMakeFiles --progress-num=17,18 "Built target app_scout_monitor"
 .PHONY : apps/scout_monitor/app/CMakeFiles/app_scout_monitor.dir/all
 
 # Build rule for subdir invocation for target.

@@ -1,0 +1,1 @@
+/bin/g++-9 -g CMakeFiles/app_CSMC_Cir.dir/bunker_demo/bunker_CSMC_Circle.cpp.o -o ../bin/app_CSMC_Cir  ../lib/libwrp_sdk.a -lpthread 

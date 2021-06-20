@@ -74,10 +74,14 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/wrp_sdk.dir/DependInfo.cmake"
-  "apps/CMakeFiles/app_hunter_demo.dir/DependInfo.cmake"
-  "apps/CMakeFiles/app_bunker_CTSMC.dir/DependInfo.cmake"
-  "apps/CMakeFiles/app_bunker_CSMC.dir/DependInfo.cmake"
   "apps/CMakeFiles/app_bunker_demo.dir/DependInfo.cmake"
+  "apps/CMakeFiles/app_bunker_CTSMC.dir/DependInfo.cmake"
+  "apps/CMakeFiles/app_bunker_CTSMCL.dir/DependInfo.cmake"
+  "apps/CMakeFiles/app_bunker_CSMC.dir/DependInfo.cmake"
+  "apps/CMakeFiles/app_CSMC_Luo.dir/DependInfo.cmake"
+  "apps/CMakeFiles/app_PI.dir/DependInfo.cmake"
+  "apps/CMakeFiles/app_CSMC_Cir.dir/DependInfo.cmake"
+  "apps/CMakeFiles/app_hunter_demo.dir/DependInfo.cmake"
   "apps/scout_monitor/CMakeFiles/monitor.dir/DependInfo.cmake"
   "apps/scout_monitor/app/CMakeFiles/app_scout_monitor.dir/DependInfo.cmake"
   )

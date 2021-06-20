@@ -5,6 +5,8 @@
 #include <fstream>
 
 //!  CTSMC + SMO
+//!  CTSMC 
+//! 圆轨迹
 
 int main(int argc, char **argv)
 {
@@ -41,8 +43,8 @@ int main(int argc, char **argv)
     double dotX = 0;
     double dotY = 0;
     double dotTheta = 0;
-    double x = 3;   //? 初始位置
-    double y = 4;
+    double x = 4;   //? 初始位置
+    double y = 4.5;
     double theta = 0;
     double d = 0.1;        //? 控制器增益
     double Ts = 0.02;      //? 控制周期： 20 ms
@@ -51,19 +53,19 @@ int main(int argc, char **argv)
     double dotYR = 0;
     double dotThetaR = 0;
 
-    double xR = 3;  //? 初始位置
-    double yR = 4;
+    double xR = 5;  //? 初始位置
+    double yR = 5;
     double thetaR = 0;
-    double vR = 0.5;         //? 给定线速度
-    double wR = 0.2;           //? 给定角速度
+    // double vR = 0.5;         //? 给定线速度
+    // double wR = 0.2;           //? 给定角速度
 
     double vc = 0;              //? 控制器输出量
     double wc = 0;              //? 控制器输出量
     double v = 0;               //? 移动机器人实际线速度
     double w = 0;               //? 移动机器人实际角速度
-    double c1 = 2;      //? 控制器增益
-    double c2 = 2;      //? 控制器增益
-    double k1 = 0.01;      //? 控制器增益
+    double c1 = 0.8;      //? 控制器增益
+    double c2 = 1;      //? 控制器增益
+    double k1 = 0.02;      //? 控制器增益
     double k2 = 0.01;      //? 控制器增益
     double alpha1 = 0.8;
     double alpha2 = 0.8;  //? 终端指数
@@ -120,7 +122,7 @@ int main(int argc, char **argv)
     double lamada20 = 0;
 
     //! 定义 SMO参数
-    double L = 0.01;
+    double L = 0.1;
     // double L = 0;
 
 
@@ -153,16 +155,15 @@ int main(int argc, char **argv)
         y += dotY * Ts;
 
         //! 轨迹规划模块 公式 8
-        dotThetaR = wR;
-        thetaR += dotThetaR * Ts;
-        dotXR = vR * cos(thetaR) - wR * d * sin(thetaR);
-        dotYR = vR * sin(thetaR) + wR * d * cos(thetaR);
+
+        dotXR = -0.4*sin(0.2*0.02*count);
+        dotYR = 0.4*cos(0.2*0.02*count);
 
         // 10 s 之后
         if(count>500)
         {
-            ds1 = 0.1 * sin(count*Ts/40.0);
-            ds2 = 0.1 * cos(count*Ts/40.0);
+            ds1 = 0.1 * sin(count*Ts/2.0);
+            ds2 = 0.1 * cos(count*Ts);
             // ds1 = 0;
             // ds2 = 0;
         }
@@ -265,7 +266,21 @@ int main(int argc, char **argv)
         vc = cos(theta) * u1 + sin(theta) * u2;
         wc = 1.0/d * (((-sin(theta)) * u1 + cos(theta) * u2));
 
+        if(vc >= 1.5)
+        {
+            vc = 1.5;
+        }
+        if(wc >= 1)
+        {
+            wc = 1;
+        }
+        if(wc<=-1)
+        {
+            wc = -1;
+        }
+
         //! 发送指令
+        std::cout << "count: " << count << std::endl;
         std::cout << "(x, y,theta): " << x << ", " << y << ", " << theta << std::endl;
         std::cout << "(xR, yR,thetaR): " << xR << ", " << yR  << ", " << thetaR << std::endl;
         std::cout << "(u1, u2): " << u1 << ", " << u2 << std::endl;
@@ -278,8 +293,8 @@ int main(int argc, char **argv)
         vE = vc - v; 
         wE = wc - w;
         
-        ofs << x << ',' << y <<','<< xR << ',' << yR << ',' << -xE
-        << ',' << -yE <<',' << vc << ',' << wc << ',' << vE << ','  << wE << ','<< z12
+        ofs << x << ',' << y <<','<< xR << ',' << yR << ',' << xE
+        << ',' << yE <<',' << vc << ',' << wc << ',' << vE << ','  << wE << ','<< z12
         << ',' << z22 << std::endl;
 
         bunker.SetMotionCommand(vc, wc);
