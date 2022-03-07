@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from os import WEXITED
 from matplotlib import lines
 import numpy as np
@@ -12,20 +14,27 @@ def loadData(filePath):
     # 这里可以记录一下挨个数值分别是啥意思
     x = []
     y = []
-    # theta = []
-    vc = []
-    wc = []
-    vE = []
-    wE = []
 
     xR = []
     yR = []
-    # thetaR = []
+
     xE = []
     yE = []
+    # theta = []
+    vc = []
+    wc = []
 
+    vE = []
+    wE = []
+
+    thetaR = []
+    thetaReal = []
+    # thetaR = []
     rou1_guji =[]
     rou2_guji =[]
+
+    xHat = []
+    yHat = []
 
 
     for line in lines:
@@ -48,17 +57,22 @@ def loadData(filePath):
         vE.append(float(items[8]))
         wE.append(float(items[9]))
 
-        rou1_guji.append(float(items[10]))
-        rou2_guji.append(float(items[11]))
+        thetaR.append(float(items[10]))
+        thetaReal.append(float(items[11]))
+
+        rou1_guji.append(float(items[12]))
+        rou2_guji.append(float(items[13]))
+
+        xHat.append(float(items[14]))
+        yHat.append(float(items[15]))
 
 
-
-    return x, y, xR, yR,vc,wc,vE,wE, xE, yE,rou1_guji,rou2_guji, length
+    return x, y, xR, yR,xE, yE, vc,wc,vE,wE, thetaR,thetaReal, rou1_guji,rou2_guji, xHat, yHat, length
 
 
 if __name__ == '__main__':
     # x, y, xR, yR,vc,wc,vE,wE, xE, yE,rou1_guji,rou2_guji ,length = loadData('./build/bin/data.txt')
-    x, y, xR, yR,vc,wc,vE,wE, xE, yE,rou1_guji,rou2_guji ,length = loadData('./data.txt')
+    x, y, xR, yR, xE, yE, vc, wc,vE,wE, thetaR, thetaReal, rou1_guji,rou2_guji , xHat , yHat,length = loadData('./data.txt')
     t = list(range(1, length+1))
 
 
@@ -67,9 +81,7 @@ plt.ylabel('Y')
 plt.title('trace')
 
 
-
 plt.figure(1)
-
 plt.plot(xR, yR, linestyle='--')
 plt.plot(x, y)
 plt.legend(('reference', 'real'), loc='upper right')
@@ -77,28 +89,35 @@ plt.legend(('reference', 'real'), loc='upper right')
 
 
 plt.figure(2)
-
-plt.plot(xE[0:2000], linestyle='--')
-plt.plot(yE[0:2000])
-plt.legend(('x-xr', 'y-yr'), loc='upper right')
-
+plt.plot(xE[0:2000])
+plt.grid(True)     # 加网格
+plt.legend(('xr-x'), loc='upper right')
 
 plt.figure(3)
-plt.plot(vE[0:2000])
-plt.plot(wE[0:2000])
-plt.legend(('v-vr','w-wr'),loc = 'upper right')
+plt.plot(yE[0:2000])
+plt.grid(True)     # 加网格
+plt.legend(('yr-y'), loc='upper right')
 
-plt.figure(4)
-plt.plot(vc[0:2000])
-plt.plot(wc[0:2000])
-plt.legend(('vc','wc'),loc = 'upper right')
-
-
+# plt.figure(4)
+# plt.plot(vE[0:3000])
+# plt.plot(wE[0:3000])
+# plt.legend(('vc','wc'),loc = 'upper right')
 
 plt.figure(5)
-plt.plot(rou1_guji[0:2000])
-plt.plot(rou2_guji[0:2000])
-plt.legend(('rou1_guji','rou2_guji'),loc = 'upper right')
+plt.plot(thetaR[0:3000])
+plt.plot(thetaReal[0:3000])
+plt.legend(('thetaR','thetaReal'),loc = 'upper right')
+
+
+# plt.figure(5)
+# plt.plot(rou1_guji[0:3000])
+# plt.plot(rou2_guji[0:3000])
+# plt.legend(('rou1_guji','rou2_guji'),loc = 'upper right')
+
+# plt.figure(6)
+# plt.plot(xHat[0:3000])
+# plt.plot(yHat[0:3000])
+# plt.legend(('xHat','yHat'),loc = 'upper right')
 
 
 plt.show()

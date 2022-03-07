@@ -1,0 +1,1 @@
+/bin/g++-9 -g CMakeFiles/app_hunter_demo_R1.dir/hunter_demo/hunter_demo.cpp.o -o ../bin/app_hunter_demo_R1  ../lib/libwrp_sdk.a -lpthread 

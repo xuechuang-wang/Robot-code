@@ -43,9 +43,9 @@ int main(int argc, char **argv)
     double dotY = 0;
     double dotTheta = 0;
     double x = 1.5;
-    double y = 2;
+    double y = 1.5;
     double theta = 0;
-    double d = 0.1;        //? 控制器增益
+    double d = 0.2;        //? 控制器增益
     double Ts = 0.02;      //? 控制周期： 20 ms
 
     double dotXR = 0;
@@ -55,6 +55,7 @@ int main(int argc, char **argv)
     double xR = 2;
     double yR = 2;
     double thetaR = 0;
+    double thetaReal  = 0;
     // double vR = 0.5;         //? 给定线速度
     // double wR = 0;           //? 给定角速度
 
@@ -62,10 +63,10 @@ int main(int argc, char **argv)
     double wc = 0;              //? 控制器输出量
     double v = 0;               //? 移动机器人实际线速度
     double w = 0;               //? 移动机器人实际角速度
-    double c1 = 2;      //? 控制器增益
-    double c2 = 0.8;      //? 控制器增益
-    double k1 = 0.01;      //? 控制器增益
-    double k2 = 0.01;      //? 控制器增益
+    double c1 = 0.8;      //? 控制器增益
+    double c2 = 0.235;      //? 控制器增益
+    double k1 = 0.06;      //? 控制器增益
+    double k2 = 0.06;      //? 控制器增益
     double u1 = 0;      //? 控制器1
     double u2 = 0;      //? 控制器2
 
@@ -92,6 +93,8 @@ int main(int argc, char **argv)
 
     double z12 = 0;  
     double z22 = 0;
+    double z11 = 0;
+    double z21 = 0;
 
 
     while (true)
@@ -117,18 +120,20 @@ int main(int argc, char **argv)
 
         x += dotX * Ts;
         y += dotY * Ts;
+        thetaReal = atan2(dotY,dotX);
 
         //! 轨迹规划模块 公式 8
-        dotXR = 0.04 * cos(0.3*0.02*count) - 0.04 * 0.02* count * sin(0.3*0.02*count)*0.3;
-        dotYR = 0.04 * sin(0.3*0.02*count) + 0.04 * 0.02* count * cos(0.3*0.02*count)*0.3;
+        dotXR = 0.04 * cos(0.4*0.02*count) - 0.04 * 0.02* count * sin(0.4*0.02*count)*0.4;
+        dotYR = 0.04 * sin(0.4*0.02*count) + 0.04 * 0.02* count * cos(0.4*0.02*count)*0.4;
+        thetaR = atan2(dotYR,dotXR);
 
-        // 10 s 之后
-        if(count>500)
+        // 20 s 之后
+        if(count>1000)
         {
-            // ds1 = 0.1 * sin(count*Ts/40.0);
-            // ds2 = 0.1 * cos(count*Ts/40.0);
-            ds1 = 0;
-            ds2 = 0;
+            ds1 = 0.2 * sin(count*Ts/2);
+            ds2 = 0.2 * cos(count*Ts/2);
+            // ds1 = 0;
+            // ds2 = 0;
         }
         xR += dotXR * Ts;  
         yR += dotYR * Ts;
@@ -177,10 +182,25 @@ int main(int argc, char **argv)
         vc = cos(theta) * u1 + sin(theta) * u2;
         wc = 1.0/d * (((-sin(theta)) * u1 + cos(theta) * u2));
 
+        if(vc >= 1.5)
+        {
+            vc = 1.5;
+        }
+        if(wc >= 1)
+        {
+            wc = 1;
+        }
+        if(wc<=-1)
+        {
+            wc = -1;
+        }
+
+
         //! 发送指令
-        std::cout << "(x, y,theta): " << x << ", " << y << ", " << theta << std::endl;
-        std::cout << "(xR, yR,thetaR): " << xR << ", " << yR  << ", " << thetaR << std::endl;
-        std::cout << "(u1, u2): " << u1 << ", " << u2 << std::endl;
+        std::cout << "count: " << count << std::endl;
+        // std::cout << "(x, y,theta): " << x << ", " << y << ", " << theta << std::endl;
+        // std::cout << "(xR, yR,thetaR): " << xR << ", " << yR  << ", " << thetaR << std::endl;
+        // std::cout << "(u1, u2): " << u1 << ", " << u2 << std::endl;
         std::cout << "Motor: (vc, wc)" << "(" << vc << ", " << wc << ")" << std::endl;
 
         //! 保存数据
@@ -190,9 +210,10 @@ int main(int argc, char **argv)
         vE = vc - v; 
         wE = wc - w;
         
-         ofs << x << ',' << y <<','<< xR << ',' << yR << ',' << xE
-        << ',' << yE <<',' << vc << ',' << wc << ',' << vE << ','  << wE << ','<< z12
-        << ',' << z22 << std::endl;
+        ofs << x << ',' << y <<','<< xR << ',' << yR << ',' << xE
+        << ',' << yE <<',' << vc << ',' << wc << ',' << vE << ',' 
+        << wE << ',' << thetaR << ',' << thetaReal << ','<< z12
+        << ',' << z22 << ',' << z11 << ',' << z21 << std::endl;
 
         bunker.SetMotionCommand(vc, wc);
 
